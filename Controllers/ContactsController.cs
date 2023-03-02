@@ -86,7 +86,7 @@ namespace AstoundContactsWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Phone,TechNum")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Phone,TechNum,JobCategory")] Contact contact)
         {
             if (id != contact.Id)
             {

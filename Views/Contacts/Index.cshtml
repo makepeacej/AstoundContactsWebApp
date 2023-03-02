@@ -10,14 +10,14 @@
     var Misc = Model.Where(m => m.JobCategory == Jobs.Misc).ToList();
 }
 
-<h1>Index</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><input class="btn btn-primary btn-sm" value="Create New" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
 </p>
 
 
-
+<h4>Managers</h4>
 <table class="table">
     <thead>
         <tr>
@@ -31,7 +31,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Managers</tr>
         @foreach (var item in managers)
         {
             <tr>
@@ -42,16 +41,16 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }
         
     </tbody>
 </table>
-
+<h4>Install or Service Techs</h4>
 <table class="table">
     <thead>
         <tr>
@@ -65,7 +64,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Install Or Service</tr>
         @foreach (var item in InstallOrService)
         {
             <tr>
@@ -76,15 +74,16 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;"/></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+<h4>Network Techs</h4>
 <table class="table">
     <thead>
         <tr>
@@ -98,7 +97,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Network Techs</tr>
         @foreach (var item in NetworkTech)
         {
             <tr>
@@ -109,15 +107,16 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+<h4>Sales</h4>
 <table class="table">
     <thead>
         <tr>
@@ -131,7 +130,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Sales</tr>
         @foreach (var item in Sales)
         {
             <tr>
@@ -142,15 +140,16 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+<h4>Office</h4>
 <table class="table">
     <thead>
         <tr>
@@ -164,7 +163,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Office</tr>
         @foreach (var item in Office)
         {
             <tr>
@@ -175,15 +173,16 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+<h4>Misc</h4>
 <table class="table">
     <thead>
         <tr>
@@ -197,7 +196,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>Misc</tr>
         @foreach (var item in Misc)
         {
             <tr>
@@ -208,9 +206,9 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><input class="btn btn-primary" value="Details" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
                 </td>
             </tr>
         }

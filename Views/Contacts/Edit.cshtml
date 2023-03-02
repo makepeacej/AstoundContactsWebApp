@@ -34,6 +34,18 @@
                 <span asp-validation-for="TechNum" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="JobCategory" class="control-label"></label>
+                <br />
+                @foreach (Jobs jobs in (Jobs[])Enum.GetValues(typeof(Jobs)))
+                {
+                    @Html.RadioButtonFor(m => m.JobCategory, jobs) @jobs
+
+                    <br />
+                }
+
+                <span asp-validation-for="JobCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
