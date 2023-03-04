@@ -8,6 +8,9 @@
 }
 
 <h4>Helpfil Docs</h4>
+
+<a asp-action="UploadDocs"><input class="btn btn-primary" value="Upload" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+
 @if (Model!=  null)
 {
     <table class="table">
@@ -29,8 +32,12 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.FileName)
                     </td>
-                    
-                    
+                    <td>
+                        <a asp-action="Download" asp-route-filename="@item.FileName"><input class="btn btn-primary" value="Download" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-filename="@item.FileName"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    </td>
 
 
                 </tr>

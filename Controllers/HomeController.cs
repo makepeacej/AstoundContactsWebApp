@@ -18,7 +18,7 @@ namespace AstoundContactsWebApp.Controllers
             _logger = logger;
         }
 
-        //ToDo Fix loading of files in visible format
+        
         public IActionResult Index()
         {
             LoadDocs.Clear();
@@ -27,15 +27,11 @@ namespace AstoundContactsWebApp.Controllers
                 Console.WriteLine(item);
                 GetFile(item);
             }
-            
-            
             return View(LoadDocs);
         }
 
         public void GetFile(string file)
         {
-           
-            
             using (var stream = System.IO.File.OpenRead(file))
             {
                 FilesViewModel fileView = new FilesViewModel
@@ -49,7 +45,6 @@ namespace AstoundContactsWebApp.Controllers
                 };
                 LoadDocs.Add(fileView);
             }
-
         }
 
         public IActionResult Privacy()
@@ -58,11 +53,9 @@ namespace AstoundContactsWebApp.Controllers
         }
 
 
-
         [HttpPost]
         public IActionResult Upload(FilesViewModel model)
         {
-            
             model.IsResponse = true;
 
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/publicDocs");
@@ -85,7 +78,24 @@ namespace AstoundContactsWebApp.Controllers
             model.IsSuccess = true;
             model.Message = "File upload successfully";
             
-            return View("Index", model);
+            return RedirectToAction("Index");
+        }
+
+        //Todo Setup a warning message to ensure user wants to delete file
+        public IActionResult Delete(string filename)
+        {
+            if (filename == null)
+                return Content("filename is not availble");
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/publicDocs", filename);
+
+            var memory = new MemoryStream();
+            
+            FileInfo file = new FileInfo(path);
+            file.Delete();
+            
+            memory.Position = 0;
+            return RedirectToAction("Index");
         }
 
         // Download file from the server
@@ -94,7 +104,7 @@ namespace AstoundContactsWebApp.Controllers
             if (filename == null)
                 return Content("filename is not availble");
 
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "upload", filename);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/publicDocs", filename);
 
             var memory = new MemoryStream();
             using (var stream = new FileStream(path, FileMode.Open))
@@ -132,7 +142,7 @@ namespace AstoundContactsWebApp.Controllers
     };
         }
 
-
+        // Upload new Document View
         public IActionResult UploadDocs()
         {
             FilesViewModel filesViewModel = new FilesViewModel();

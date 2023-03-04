@@ -6,6 +6,7 @@ namespace AstoundContactsWebApp.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        //ToDo seed user login
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
