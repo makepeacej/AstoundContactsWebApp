@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AstoundContactsWebApp.Models.Link>
+
+@{
+    ViewData["Title"] = "Url Links";
+}
+
+<h4>URL Links</h4>
+
+<a asp-action="Create"><input class="btn btn-primary" value="Create New" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a href="@item.Url">Link</a>
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><input class="btn btn-primary" value="Edit" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><input class="btn btn-primary" value="Delete" style="padding-bottom: 0px;padding-left: 0px;border-left-width: 1px;padding-right: 0px;padding-top: 0px;width: 100px;height: 25px;" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

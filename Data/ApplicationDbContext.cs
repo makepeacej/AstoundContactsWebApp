@@ -12,5 +12,7 @@ namespace AstoundContactsWebApp.Data
         {
         }
         public DbSet<AstoundContactsWebApp.Models.Contact> Contact { get; set; }
+        public DbSet<AstoundContactsWebApp.Models.Link> Link { get; set; }
+     
     }
 }
