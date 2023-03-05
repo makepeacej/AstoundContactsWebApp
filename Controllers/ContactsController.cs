@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AstoundContactsWebApp.Data;
 using AstoundContactsWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AstoundContactsWebApp.Controllers
 {
@@ -43,12 +44,14 @@ namespace AstoundContactsWebApp.Controllers
             return View(contact);
         }
 
+        [Authorize]
         // GET: Contacts/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         // POST: Contacts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -65,6 +68,7 @@ namespace AstoundContactsWebApp.Controllers
             return View(contact);
         }
 
+        [Authorize]
         // GET: Contacts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -81,6 +85,7 @@ namespace AstoundContactsWebApp.Controllers
             return View(contact);
         }
 
+        [Authorize]
         // POST: Contacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -116,6 +121,7 @@ namespace AstoundContactsWebApp.Controllers
             return View(contact);
         }
 
+        [Authorize]
         // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

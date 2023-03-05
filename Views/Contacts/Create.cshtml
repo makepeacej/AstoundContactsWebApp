@@ -36,7 +36,9 @@
                 <label asp-for="JobCategory" class="control-label"></label>
                 <br />
                 @foreach(Jobs jobs in (Jobs[]) Enum.GetValues(typeof(Jobs))){
-                    @Html.RadioButtonFor(m => m.JobCategory, jobs) @jobs<br />
+                    @Html.RadioButtonFor(m => m.JobCategory, jobs) @string.Concat(jobs.ToString().Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ')
+
+                    <br />
                 }
                 
                 <span asp-validation-for="JobCategory" class="text-danger"></span>

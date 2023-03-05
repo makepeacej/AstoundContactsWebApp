@@ -22,6 +22,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -34,6 +37,9 @@
         @foreach (var item in managers)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -55,6 +61,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -67,6 +76,9 @@
         @foreach (var item in InstallOrService)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -88,6 +100,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -100,6 +115,9 @@
         @foreach (var item in NetworkTech)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -121,6 +139,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -133,6 +154,9 @@
         @foreach (var item in Sales)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -154,6 +178,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -166,6 +193,9 @@
         @foreach (var item in Office)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -187,6 +217,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.TechNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -199,6 +232,9 @@
         @foreach (var item in Misc)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechNum)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>

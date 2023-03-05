@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace AstoundContactsWebApp.Controllers
 {
@@ -47,12 +47,7 @@ namespace AstoundContactsWebApp.Controllers
             }
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-
+        [Authorize]
         [HttpPost]
         public IActionResult Upload(FilesViewModel model)
         {
@@ -82,6 +77,7 @@ namespace AstoundContactsWebApp.Controllers
         }
 
         //Todo Setup a warning message to ensure user wants to delete file
+        [Authorize]
         public IActionResult Delete(string filename)
         {
             if (filename == null)
@@ -142,6 +138,7 @@ namespace AstoundContactsWebApp.Controllers
     };
         }
 
+        [Authorize]
         // Upload new Document View
         public IActionResult UploadDocs()
         {

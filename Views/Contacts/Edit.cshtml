@@ -23,7 +23,7 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" >
                 <label asp-for="Phone" class="control-label"></label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
@@ -38,7 +38,7 @@
                 <br />
                 @foreach (Jobs jobs in (Jobs[])Enum.GetValues(typeof(Jobs)))
                 {
-                    @Html.RadioButtonFor(m => m.JobCategory, jobs) @jobs
+                    @Html.RadioButtonFor(m => m.JobCategory, jobs)  @string.Concat(jobs.ToString().Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ')
 
                     <br />
                 }
