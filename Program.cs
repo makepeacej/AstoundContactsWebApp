@@ -2,13 +2,49 @@ using AstoundContactsWebApp.Data;
 using AstoundContactsWebApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+{
+
+    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    string connStr;
+
+    if (env == "Development")
+    {
+        connStr = builder.Configuration.GetConnectionString("DefaultConnection");
+
+
+    }
+    else
+    {
+        // Use connection string provided at runtime by Heroku.
+        var connUrl = Environment.GetEnvironmentVariable("CLEARDB_DATABASE_URL");
+
+        connUrl = connUrl.Replace("mysql://", string.Empty);
+        var userPassSide = connUrl.Split("@")[0];
+        var hostSide = connUrl.Split("@")[1];
+
+        var connUser = userPassSide.Split(":")[0];
+        var connPass = userPassSide.Split(":")[1];
+        var connHost = hostSide.Split("/")[0];
+        var connDb = hostSide.Split("/")[1].Split("?")[0];
+
+
+        connStr = $"server={connHost};Uid={connUser};Pwd={connPass};Database={connDb}";
+
+
+    }
+
+    options.UseSqlServer(connStr);
+
+});
+//options.UseSqlServer(connectionString)
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
